@@ -1,22 +1,39 @@
 @import "_mixins.scss";
 $bgcol: lightgrey;
-
 $max: 12;
+$gutterWidth: 30px;
+
 * {
   box-sizing: border-box;
 }
+
+.container {
+  padding: 0 #{$gutterWidth / 2};
+}
+
 .row {
   display: flex;
+  flex-wrap: wrap;
+  margin: 0 #{-1 * $gutterWidth / 2};
+}
+
+[class*="col-"] {
+  flex: 1 0 100%;
+  margin-bottom: 20px;
+}
+
+.bg {
+  background-color: $bgcol;
+  padding: 10px 10px;
 }
 
 @for $i from 1 through $max {
-  .col-lg-#{$i} {
-    @include breakpoint(lg) {
+  .col-sm-#{$i} {
+    @include breakpoint(sm) {
       $width: 100%/12;
-      width: $width * $i;
-      background-color: $bgcol;
-      padding: 10px 10px;
-      margin: 10px;
+      padding: 0 #{$gutterWidth / 2};
+      flex-basis: $width * $i;
+      max-width: $width * $i;
       text-align: center;
     }
   }
@@ -26,23 +43,21 @@ $max: 12;
   .col-md-#{$i} {
     @include breakpoint(md) {
       $width: 100%/12;
-      width: $width * $i;
-      background-color: $bgcol;
-      padding: 10px 10px;
-      margin: 10px;
+      padding: 0 #{$gutterWidth / 2};
+      flex-basis: $width * $i;
+      max-width: $width * $i;
       text-align: center;
     }
   }
 }
 
 @for $i from 1 through $max {
-  .col-sm-#{$i} {
-    @include breakpoint(sm) {
+  .col-lg-#{$i} {
+    @include breakpoint(lg) {
       $width: 100%/12;
-      width: $width * $i;
-      background-color: $bgcol;
-      padding: 10px 10px;
-      margin: 10px;
+      flex-basis: $width * $i;
+      max-width: $width * $i;
+      padding: 0 #{$gutterWidth / 2};
       text-align: center;
     }
   }
