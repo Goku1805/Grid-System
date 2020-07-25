@@ -1,0 +1,40 @@
+@import "_mixins.scss";
+$bgcol: lightgrey;
+
+$max: 12;
+* {
+  box-sizing: border-box;
+}
+.row {
+  display: flex;
+}
+
+@for $i from 1 through $max {
+  $width: 100%/12;
+
+  .col-lg-#{$i} {
+    @include breakpoint(lg) {
+      @include content;
+    }
+  }
+}
+
+@for $i from 1 through $max {
+  $width: 100%/12;
+
+  .col-md-#{$i} {
+    @include breakpoint(md) {
+      @include content;
+    }
+  }
+}
+
+@for $i from 1 through $max {
+  $width: 100%/12;
+
+  .col-sm-#{$i} {
+    @include breakpoint(sm) {
+      @include content;
+    }
+  }
+}
