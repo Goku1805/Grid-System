@@ -13,10 +13,3 @@
     }
   }
 }
-@mixin content {
-  width: $width * $i;
-  background-color: $bgcol;
-  padding: 10px 10px;
-  margin: 10px;
-  text-align: center;
-}

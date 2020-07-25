@@ -10,31 +10,40 @@ $max: 12;
 }
 
 @for $i from 1 through $max {
-  $width: 100%/12;
-
   .col-lg-#{$i} {
     @include breakpoint(lg) {
-      @include content;
+      $width: 100%/12;
+      width: $width * $i;
+      background-color: $bgcol;
+      padding: 10px 10px;
+      margin: 10px;
+      text-align: center;
     }
   }
 }
 
 @for $i from 1 through $max {
-  $width: 100%/12;
-
   .col-md-#{$i} {
     @include breakpoint(md) {
-      @include content;
+      $width: 100%/12;
+      width: $width * $i;
+      background-color: $bgcol;
+      padding: 10px 10px;
+      margin: 10px;
+      text-align: center;
     }
   }
 }
 
 @for $i from 1 through $max {
-  $width: 100%/12;
-
   .col-sm-#{$i} {
     @include breakpoint(sm) {
-      @include content;
+      $width: 100%/12;
+      width: $width * $i;
+      background-color: $bgcol;
+      padding: 10px 10px;
+      margin: 10px;
+      text-align: center;
     }
   }
 }
