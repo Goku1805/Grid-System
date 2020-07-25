@@ -1,6 +1,6 @@
 @mixin breakpoint($screen) {
   @if $screen == lg {
-    @media (max-width: 1500px) {
+    @media (min-width: 1024px) {
       @content;
     }
   } @else if $screen == md {
